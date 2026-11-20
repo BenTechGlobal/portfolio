@@ -1,30 +1,91 @@
+/* ==========================================================================
+   RESPONSIVE & MOBILE VIEWPORT CONTAINMENT FIXES
+   ========================================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main,
+header,
+footer,
+.section {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.hero-grid > *,
+.about-grid > *,
+.contact-grid > *,
+.header-inner > * {
+  min-width: 0;
+}
+
 @media (max-width: 1080px) {
   .hero-grid { grid-template-columns: 1fr; gap: 44px; }
   .hero-visual { order: -1; }
-  .portrait-frame { max-width: 340px; }
+  .portrait-frame { max-width: 340px; width: 100%; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .sponsorship-callout { flex-direction: column; align-items: flex-start; }
 }
+
 @media (max-width: 920px) {
   .mobile-menu-toggle { display: flex; }
-  .main-nav { position: fixed; top: var(--header-height); left: 0; right: 0; background: var(--bg-card-solid); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; transform: translateY(-120%); opacity: 0; visibility: hidden; transition: transform var(--transition-smooth), opacity var(--transition-smooth), visibility var(--transition-smooth); }
+  .main-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100vw;
+    background: var(--bg-card-solid);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 20px 24px;
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth), visibility var(--transition-smooth);
+  }
   .main-nav.open { transform: translateY(0); opacity: 1; visibility: visible; }
   .nav-list { flex-direction: column; align-items: stretch; gap: 8px; }
   .nav-link { display: block; padding: 12px 14px; }
   .nav-link.nav-cta { margin-left: 0; text-align: center; }
 }
+
 @media (max-width: 720px) {
+  .container { padding: 0 18px; }
   .section { padding: 68px 0; }
-  .factual-strip, .roadmap-stats { grid-template-columns: repeat(2, 1fr); }
+  .factual-strip, .roadmap-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cyber-projects-grid,
+  .software-grid,
+  .certifications-grid,
+  .skills-grid,
+  .multidisciplinary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .about-narrative { padding: 24px; }
+  .education-banner,
+  .sponsorship-callout,
+  .roadmap-dashboard,
+  .contact-composer { padding: 22px 20px; }
   .timeline-container { padding-left: 22px; }
   .timeline-item { padding: 20px; }
   .timeline-item::before { left: -31px; }
 }
+
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .factual-strip, .roadmap-stats { grid-template-columns: 1fr; }
-  .cyber-projects-grid, .software-grid, .certifications-grid, .skills-grid, .multidisciplinary-grid { grid-template-columns: 1fr; }
+  .brand-logo { gap: 10px; min-width: 0; }
+  .brand-monogram { width: 36px; height: 36px; flex-shrink: 0; }
+  .brand-name { font-size: 0.94rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-sub { font-size: 0.68rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .header-actions { gap: 8px; flex-shrink: 0; }
+  .factual-strip, .roadmap-stats { grid-template-columns: minmax(0, 1fr); }
   .hero-actions .btn, .composer-actions .btn { width: 100%; }
+  .portrait-frame { max-width: 100%; }
   .portrait-status-card { position: static; margin-top: 12px; }
+  .affiliate-card { min-width: 250px; }
 }
