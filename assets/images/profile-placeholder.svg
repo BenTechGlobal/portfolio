@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600" height="720" role="img" aria-label="Adepoju Gbenga Festus Portrait Placeholder">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(148,163,184,0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="720" fill="url(#bgGrad)"/>
+  <rect width="600" height="720" fill="url(#grid)"/>
+  <circle cx="300" cy="250" r="140" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.55"/>
+  <circle cx="300" cy="240" r="78" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <path d="M165 510 C165 405, 435 405, 435 510 L435 560 L165 560 Z" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <rect x="44" y="585" width="512" height="92" rx="12" fill="rgba(15,23,42,0.9)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
+  <text x="300" y="622" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1.2">PORTRAIT PHOTO PLACEHOLDER</text>
+  <text x="300" y="648" font-family="monospace" font-size="13" fill="#10b981" text-anchor="middle">Replace: assets/images/profile-photo.jpg</text>
+</svg>

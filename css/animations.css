@@ -1,0 +1,32 @@
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.65); }
+  70% { box-shadow: 0 0 0 9px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.pulse-dot { animation: pulseRing 2.2s infinite; }
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 540ms cubic-bezier(0.22, 1, 0.36, 1), transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-item.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-group .reveal-item:nth-child(1) { transition-delay: 40ms; }
+.reveal-group .reveal-item:nth-child(2) { transition-delay: 120ms; }
+.reveal-group .reveal-item:nth-child(3) { transition-delay: 200ms; }
+.reveal-group .reveal-item:nth-child(4) { transition-delay: 280ms; }
+.reveal-group .reveal-item:nth-child(5) { transition-delay: 340ms; }
+.reveal-group .reveal-item:nth-child(6) { transition-delay: 400ms; }
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.portrait-frame { animation: subtleFloat 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal-item { opacity: 1; transform: none; }
+}
